@@ -37,21 +37,16 @@
     <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
 
     <style>
-      :root {
-        --base: #ffc600;
-        --spacing: 10px;
-        --blur: 10px;
-      }
       /*
       misc styles, nothing to do with CSS variables
     */
       img {
-        padding: var(--spacing);
-        background: var(--base);
-        filter: blur(var(--blur));
+        padding: 10px;
+        background: #ffc600;
+        filter: 10px;
       }
       .hl {
-        color: var(--base);
+        color: #ffc600;
       }
 
       body {
@@ -74,20 +69,21 @@
 
     <script>
       const img = document.querySelector("img");
+      const hl = document.querySelector("span");
       const spacing = document.getElementById("spacing");
       spacing.addEventListener("input", (e) => {
-        img.style.padding = e.target.value;
+        img.style.padding = `${e.target.value}px`;
         console.log(e.target.value);
       });
       const blur = document.getElementById("blur");
       blur.addEventListener("input", (e) => {
-        img.style.filter = `blur(${e.target.value})`;
+        img.style.filter = `blur(${e.target.value}px)`;
         console.log(e.target.value);
       });
       const base = document.getElementById("base");
       base.addEventListener("input", (e) => {
-        img.style.background = e.target.value;
-        console.log(e.target.value);
+        img.style.background = `${e.target.value}`;
+        hl.style.color = `${e.target.value}`;
       });
     </script>
   </body>
